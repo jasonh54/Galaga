@@ -5,8 +5,8 @@ class player{
     this.x = x;
     this.y = y;
     this.sprite = sprite;
-    this.w = 50;
-    this.h = 50;
+    this.w = 100;
+    this.h = 100;
   }
   
   public void show(){
@@ -30,4 +30,10 @@ class player{
     }
   }
   
+  
+  public void shoot(){
+    if(spaceButton == true){
+      pMissileList.add(new playerMissile(x,y,15,playerMissile));
+    }
+  }
 }
