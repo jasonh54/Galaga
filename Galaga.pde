@@ -1,17 +1,28 @@
 PImage alienMissile, alienShip, playerMissile, enemyShip, playerShip;
 boolean aButton, wButton, sButton, dButton;
+ArrayList<enemy> enemies = new ArrayList<enemy>();
+spawner sp;
 void setup(){
   size(800,800);
   
-  alienMissile = loadImage("alienMissile.png");
-  alienShip = loadImage("alienShip.png");
-  playerMissile = loadImage("missileimage.png");
-  enemyShip = loadImage("ship3.png");
-  playerShip = loadImage("ship4.png");
+  alienMissile = loadImage("images/alienMissile.png");
+  alienShip = loadImage("images/aliensh.png");
+  playerMissile = loadImage("images/missileimage.png");
+  enemyShip = loadImage("images/ship3.png");
+  playerShip = loadImage("images/ship4.png");
+  
+  sp = new spawner();
 }
 
 void draw(){
   background(0);
+  
+  sp.spawn();
+  
+  for(int i = 0; i<enemies.size(); i++){
+    enemies.get(i).show();
+    enemies.get(i).move();
+  }
 
 }
 
