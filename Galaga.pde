@@ -1,8 +1,13 @@
 PImage alienMissile, alienShip, playerMissile, enemyShip, playerShip;
+
+
 boolean aButton, wButton, sButton, dButton, spaceButton;
 
 player player1;
 ArrayList<playerMissile> pMissileList;
+
+ArrayList<enemy> enemies = new ArrayList<enemy>();
+spawner sp;
 
 void setup(){
   size(800,800);
@@ -13,14 +18,24 @@ void setup(){
   enemyShip = loadImage("images/ship3.png");
   playerShip = loadImage("images/ship4.png");
   
-  
+
+  sp = new spawner();
+
   pMissileList = new ArrayList<playerMissile>();
   player1 = new player(400,400,playerShip);
+
 }
 
 void draw(){
   background(0);
   
+  sp.spawn();
+  
+  for(int i = 0; i<enemies.size(); i++){
+    enemies.get(i).show();
+    enemies.get(i).move();
+  }
+
   for(int i=0;i<pMissileList.size();i++){
     pMissileList.get(i).show();
     pMissileList.get(i).move();
@@ -30,6 +45,7 @@ void draw(){
   player1.move();
   player1.shoot();
   
+
 
 }
 
