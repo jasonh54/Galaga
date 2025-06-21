@@ -1,7 +1,14 @@
 PImage alienMissile, alienShip, playerMissile, enemyShip, playerShip;
-boolean aButton, wButton, sButton, dButton;
+
+
+boolean aButton, wButton, sButton, dButton, spaceButton;
+
+player player1;
+ArrayList<playerMissile> pMissileList;
+
 ArrayList<enemy> enemies = new ArrayList<enemy>();
 spawner sp;
+
 void setup(){
   size(800,800);
   
@@ -11,7 +18,12 @@ void setup(){
   enemyShip = loadImage("images/ship3.png");
   playerShip = loadImage("images/ship4.png");
   
+
   sp = new spawner();
+
+  pMissileList = new ArrayList<playerMissile>();
+  player1 = new player(400,400,playerShip);
+
 }
 
 void draw(){
@@ -23,6 +35,17 @@ void draw(){
     enemies.get(i).show();
     enemies.get(i).move();
   }
+
+  for(int i=0;i<pMissileList.size();i++){
+    pMissileList.get(i).show();
+    pMissileList.get(i).move();
+  }
+  
+  player1.show();
+  player1.move();
+  player1.shoot();
+  
+
 
 }
 
@@ -39,6 +62,9 @@ void keyPressed(){
   if(keyCode == 87){
     wButton = true;
   }
+  if(keyCode == 32){
+    spaceButton = true;
+  }
 }
 void keyReleased(){
   if(keyCode == 65){
@@ -52,5 +78,9 @@ void keyReleased(){
   }
   if(keyCode == 87){
     wButton = false;
+  }
+  
+  if(keyCode == 32){
+    spaceButton = false;
   }
 }
