@@ -1,7 +1,33 @@
 class player{
   float x, y ,w, h;
-  player(){
+  PImage sprite;
+  player(float x,float y,PImage sprite){
+    this.x = x;
+    this.y = y;
+    this.sprite = sprite;
+    this.w = 50;
+    this.h = 50;
+  }
+  
+  public void show(){
+    image(sprite,x,y,w,h);
+  }
+  
+  public void move(){
+    if(aButton == true){
+      this.x -= 5;
+    }
+    if(wButton == true){
+      this.y -= 5;
+    }
     
+    if(sButton == true){
+      this.y += 5;
+    }
+    
+    if(dButton == true){
+      this.x += 5;
+    }
   }
   
 }
