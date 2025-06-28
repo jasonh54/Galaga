@@ -17,7 +17,7 @@ class playerMissile{
   
   
   public void show(){
-    image(sprite,x,y,w,h);
+    image(sprite,x-w/2,y-h/2,w,h);
   }
   
   public void move(){
