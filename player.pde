@@ -1,12 +1,14 @@
 class player{
   float x, y ,w, h;
   PImage sprite;
+  int timer;
   player(float x,float y,PImage sprite){
     this.x = x;
     this.y = y;
     this.sprite = sprite;
     this.w = 100;
     this.h = 100;
+    this.timer = 0;
   }
   
   public void show(){
@@ -32,8 +34,10 @@ class player{
   
   
   public void shoot(){
-    if(spaceButton == true){
+    timer++;
+    if(spaceButton == true && timer > 15){
       pMissileList.add(new playerMissile(x,y,15,playerMissile));
+      timer = 0;
     }
   }
 }
