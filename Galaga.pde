@@ -9,6 +9,7 @@ ArrayList<playerMissile> pMissileList;
 ArrayList<enemy> enemies = new ArrayList<enemy>();
 spawner sp;
 enemyTwo et;
+ArrayList<alienMissile> am = new ArrayList<alienMissile>();
 void setup(){
   size(800,800);
   
@@ -24,6 +25,7 @@ void setup(){
   pMissileList = new ArrayList<playerMissile>();
   player1 = new player(400,400,playerShip);
   et = new enemyTwo(400,400,enemyShip);
+  am = new ArrayList<alienMissile>();
 }
 
 void draw(){
@@ -46,7 +48,11 @@ void draw(){
   player1.shoot();
   et.show();
   et.move();
-
+  et.shoot();
+  for(int i=0;i<am.size();i++){
+    am.get(i).show();
+    am.get(i).move();
+  }
 
 }
 
