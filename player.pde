@@ -52,9 +52,11 @@ class player{
   public void getHit(){
     hitTimer++;
     for(int i = 0;i<enemies.size();i++){
-      if(collisionCheck(x,enemies.get(i).x,y, enemies.get(i).y) == true && hitTimer > 60){
+      if(collisionCheck(x,enemies.get(i).x,y, enemies.get(i).y) == true && hitTimer > 30){
+        enemies.get(i).alive = false;
         hp -= 1;
         hitTimer = 0;
+        
       }
     }
 
