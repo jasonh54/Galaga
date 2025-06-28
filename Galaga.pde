@@ -44,8 +44,9 @@ void draw(){
   player1.show();
   player1.move();
   player1.shoot();
+  player1.getHit();
   
-
+  
 
 }
 
@@ -83,4 +84,11 @@ void keyReleased(){
   if(keyCode == 32){
     spaceButton = false;
   }
+}
+
+public boolean collisionCheck(float x1, float x2, float y1, float y2){
+  if((abs(x1-x2) < 30 ) && (abs(y1-y2) < 30 )){
+    return true;
+  }
+  return false;
 }
