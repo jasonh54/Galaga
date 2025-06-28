@@ -4,6 +4,7 @@ class enemy {
   float w;
   float h;
   PImage sprite;
+  boolean alive;
   
   enemy(float x, float y, PImage sprite){
      this.x = x;
@@ -11,9 +12,13 @@ class enemy {
      this.w = 50;
      this.h = 50;
      this.sprite = sprite;
+     this.alive = true;
   }
   void show(){
-    image(sprite, x-w/2, y-h/2, w, h);
+    if(alive != false){
+      image(sprite, x-w/2, y-h/2, w, h);
+    }
+    
   }
   void move(){
     y += 1;
