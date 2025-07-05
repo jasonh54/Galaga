@@ -60,6 +60,12 @@ class player{
   
       }
     }
-
+    for(int i = 0;i<am.size();i++){
+      if(collisionCheck(x,am.get(i).x,y, am.get(i).y) == true && hitTimer > 30){
+        am.get(i).alive = false;
+        hp -= 1;
+        hitTimer = 0;
+      }
+    }
   }
 }

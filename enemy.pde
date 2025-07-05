@@ -70,6 +70,7 @@ class alienMissile{
   float h;
   private float speed;
   private PImage sprite;
+  boolean alive = true;
   alienMissile(float x, float y, float speed,PImage sprite){
     this.x = x;
     this.y = y;
@@ -79,7 +80,9 @@ class alienMissile{
     this.sprite = sprite;
   }
   public void show(){
-    image(sprite,x-w/2,y-h/2,w,h);
+    if(alive == true){
+      image(sprite,x-w/2,y-h/2,w,h);
+    }
   }
   
   public void move(){
