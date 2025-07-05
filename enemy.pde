@@ -51,7 +51,7 @@ class enemyTwo{
      this.h = 100;
      this.sprite = sprite;
      this.time = int(random(0,600));
-     this.hp = 10;
+     this.hp = 5;
      
   }
   void show(){
@@ -73,7 +73,10 @@ class enemyTwo{
    public void getHit(){
     for(int i=0;i<pMissileList.size();i++){
       if(collisionCheck(pMissileList.get(i).x, x, pMissileList.get(i).y, y) == true){
-        this.alive = false;
+        hp--;
+        if(hp < 0){ 
+          this.alive = false;
+        }
         pMissileList.get(i).alive = false;
       }
     }
