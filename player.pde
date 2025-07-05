@@ -57,6 +57,7 @@ class player{
         hp -= 1;
         hitTimer = 0;
         
+  
       }
     }
 
