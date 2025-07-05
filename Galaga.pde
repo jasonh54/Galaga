@@ -36,6 +36,7 @@ void draw(){
   for(int i = 0; i<enemies.size(); i++){
     enemies.get(i).show();
     enemies.get(i).move();
+    enemies.get(i).getHit();
   }
 
   for(int i=0;i<pMissileList.size();i++){
