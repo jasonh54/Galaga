@@ -59,6 +59,7 @@ void draw(){
     am.get(i).move();
   }
 
+  deleteEnemies();
 
 }
 
@@ -103,4 +104,13 @@ public boolean collisionCheck(float x1, float x2, float y1, float y2){
     return true;
   }
   return false;
+}
+
+public void deleteEnemies(){
+  for(int i=0;i<enemies.size();i++){
+    if(enemies.get(i).alive == false){
+      enemies.remove(i);
+      i--;
+    }
+  }
 }
