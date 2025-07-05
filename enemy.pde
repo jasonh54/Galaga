@@ -29,6 +29,7 @@ class enemy {
       if(collisionCheck(pMissileList.get(i).x, x, pMissileList.get(i).y, y) == true){
         this.alive = false;
         pMissileList.get(i).alive = false;
+        
       }
     }
   }
