@@ -38,7 +38,7 @@ class enemyTwo{
      this.w = 100;
      this.h = 100;
      this.sprite = sprite;
-     this.time = 300;
+     this.time = int(random(0,600));
   }
   void show(){
     image(sprite, x-w/2, y-h/2, w, h);
