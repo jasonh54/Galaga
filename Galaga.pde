@@ -64,6 +64,7 @@ void draw(){
   }
 
   deleteEnemies();
+  deletePlayerMissiles();
 
 }
 
@@ -114,6 +115,15 @@ public void deleteEnemies(){
   for(int i=0;i<enemies.size();i++){
     if(enemies.get(i).alive == false){
       enemies.remove(i);
+      i--;
+    }
+  }
+}
+
+public void deletePlayerMissiles(){
+  for(int i=0;i<pMissileList.size();i++){
+    if(pMissileList.get(i).alive == false){
+      pMissileList.remove(i);
       i--;
     }
   }
