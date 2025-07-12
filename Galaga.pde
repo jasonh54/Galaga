@@ -77,7 +77,8 @@ void draw(){
 
   deleteEnemies();
   deletePlayerMissiles();
-
+  deleteDeadEnemies();
+  deleteAlienMissiles();
 }
 
 void keyPressed(){
@@ -136,6 +137,22 @@ public void deletePlayerMissiles(){
   for(int i=0;i<pMissileList.size();i++){
     if(pMissileList.get(i).alive == false){
       pMissileList.remove(i);
+      i--;
+    }
+  }
+}
+public void deleteDeadEnemies(){
+  for(int i = 0; i < enemyTwos.size(); i++){
+    if(enemyTwos.get(i).alive == false){
+      enemyTwos.remove(i);
+      i--;
+    }
+  }
+}
+public void deleteAlienMissiles(){
+  for(int i = 0; i < am.size(); i++){
+    if(am.get(i).alive == false){
+      am.remove(i);
       i--;
     }
   }
