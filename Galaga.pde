@@ -59,6 +59,8 @@ void draw(){
   player1.shoot();
 
   player1.getHit();
+  player1.boundaries();
+  player1.playerDeath();
   
   
 

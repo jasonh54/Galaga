@@ -68,4 +68,29 @@ class player{
       }
     }
   }
+  
+  public void boundaries(){
+    if(x > 800){
+      x = 800;
+    }
+    if(x < 0){
+      x = 0;
+    }
+    if(y < 0){
+      y = 0;
+    }
+    if(y > 800){
+      y = 800;
+    }
+  }
+  
+  public void playerDeath(){
+    if(hp <= 0){
+      
+      fill(255,0,0);
+      text("GAME OVER",320,400);
+       
+      noLoop();
+    }
+  }
 }
