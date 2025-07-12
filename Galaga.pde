@@ -10,6 +10,9 @@ ArrayList<enemy> enemies = new ArrayList<enemy>();
 spawner sp;
 ArrayList<enemyTwo> enemyTwos = new ArrayList<enemyTwo>();
 ArrayList<alienMissile> am = new ArrayList<alienMissile>();
+
+int score;
+
 void setup(){
   size(800,800);
   
@@ -26,10 +29,17 @@ void setup(){
   player1 = new player(400,400,playerShip);
   //et = new enemyTwo(400,400,enemyShip);
   am = new ArrayList<alienMissile>();
+  
+  score = 0;
 }
 
 void draw(){
   background(0);
+  text("hp: " + player1.hp,50,50);
+  text("score: " + score, 350, 50 );
+  textSize(35);
+  
+  
   
   sp.spawn();
   
