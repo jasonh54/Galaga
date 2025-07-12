@@ -1,4 +1,4 @@
-PImage alienMissile, alienShip, playerMissile, enemyShip, playerShip;
+PImage alienMissile, alienShip, playerMissile, enemyShip, playerShip, healUpimg, bossimg, plasmaimg;
 
 
 boolean aButton, wButton, sButton, dButton, spaceButton;
@@ -21,7 +21,9 @@ void setup(){
   playerMissile = loadImage("images/missileimage.png");
   enemyShip = loadImage("images/ship3.png");
   playerShip = loadImage("images/ship4.png");
-  
+  healUpimg = loadImage("images/heal-powerup.png");
+  bossimg = loadImage("images/bossenemy.png");
+  plasmaimg = loadImage("images/plasmaball.png");
 
   sp = new spawner();
 
