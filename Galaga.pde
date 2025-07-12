@@ -66,6 +66,7 @@ void draw(){
     enemyTwos.get(i).show();
     enemyTwos.get(i).move();
     enemyTwos.get(i).shoot();
+    enemyTwos.get(i).getHit();
   }
   for(int i=0;i<am.size();i++){
     am.get(i).show();

@@ -42,6 +42,8 @@ class enemyTwo{
   float h;
   PImage sprite;
   int time;
+  int hp;
+  boolean alive = true;
   enemyTwo(float x, float y, PImage sprite){
      this.x = x;
      this.y = y;
@@ -49,20 +51,36 @@ class enemyTwo{
      this.h = 100;
      this.sprite = sprite;
      this.time = int(random(0,600));
+     this.hp = 5;
+     
   }
   void show(){
-    image(sprite, x-w/2, y-h/2, w, h);
+    if(alive == true){
+      
+      image(sprite, x-w/2, y-h/2, w, h);
+    }
   }
   void move(){
     y += 1;
   }
   void shoot(){
       time--;
-      if(time == 0){
+      if(time == 0 && alive == true){
         am.add(new alienMissile(x,y,3,alienMissile));
         time = 300;
       }
     }
+   public void getHit(){
+    for(int i=0;i<pMissileList.size();i++){
+      if(collisionCheck(pMissileList.get(i).x, x, pMissileList.get(i).y, y) == true){
+        hp--;
+        if(hp < 0){ 
+          this.alive = false;
+        }
+        pMissileList.get(i).alive = false;
+      }
+    }
+   }
 }
 class alienMissile{
   float x;
