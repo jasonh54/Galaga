@@ -13,6 +13,8 @@ ArrayList<alienMissile> am = new ArrayList<alienMissile>();
 
 int score;
 
+healUp hu;
+
 void setup(){
   size(800,800);
   
@@ -31,6 +33,9 @@ void setup(){
   player1 = new player(400,400,playerShip);
   //et = new enemyTwo(400,400,enemyShip);
   am = new ArrayList<alienMissile>();
+  
+  hu = new healUp(random(0,800), random(-2000,-1000), healUpimg);
+  
   
   score = 0;
 }
@@ -56,13 +61,19 @@ void draw(){
     pMissileList.get(i).move();
   }
   
+
+  
   player1.show();
   player1.move();
   player1.shoot();
-
   player1.getHit();
   player1.boundaries();
   player1.playerDeath();
+  
+  
+  hu.show();
+  hu.move();
+  hu.getHit();
   
   
 
